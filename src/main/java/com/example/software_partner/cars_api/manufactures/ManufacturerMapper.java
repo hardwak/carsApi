@@ -1,6 +1,7 @@
 package com.example.software_partner.cars_api.manufactures;
 
 import com.example.software_partner.cars_api.manufactures.dto.ManufacturerDTO;
+import com.example.software_partner.cars_api.manufactures.dto.ManufacturerFullDTO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,5 +17,12 @@ public class ManufacturerMapper {
             return null;
         }
         return new ManufacturerDTO(manufacturer.getManufacturerName());
+    }
+
+    public ManufacturerFullDTO toManufacturerFullDTO(Manufacturer manufacturer) {
+        return new ManufacturerFullDTO(
+                manufacturer.getManufacturerId(),
+                manufacturer.getManufacturerName()
+        );
     }
 }

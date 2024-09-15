@@ -1,16 +1,14 @@
 package com.example.software_partner.cars_api.owners.dto;
 
-import jakarta.validation.constraints.AssertTrue;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 
 public record OwnerCreationDTO(
         @NotBlank
         String firstName,
         @NotBlank
         String lastName,
-        @Email
-        String email,
+        @Email @NotNull String email,
+        @Size(min = 6, max = 20)
         String phone
 ) {
         @AssertTrue

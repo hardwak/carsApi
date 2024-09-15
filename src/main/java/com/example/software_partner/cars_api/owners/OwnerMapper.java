@@ -1,6 +1,7 @@
 package com.example.software_partner.cars_api.owners;
 
 import com.example.software_partner.cars_api.owners.dto.OwnerCreationDTO;
+import com.example.software_partner.cars_api.owners.dto.OwnerFullDTO;
 import com.example.software_partner.cars_api.owners.dto.OwnerResponseDTO;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,16 @@ public class OwnerMapper {
         if(owner == null)
             return null;
 
-        return new OwnerResponseDTO(owner.getFirstName(), owner.getLastName());
+        return new OwnerResponseDTO(owner.getFirstName(), owner.getLastName(), owner.getEmail(), owner.getPhone());
+    }
+
+    public OwnerFullDTO toOwnerFullDTO(Owner owner){
+        return new OwnerFullDTO(
+                owner.getOwnerId(),
+                owner.getFirstName(),
+                owner.getLastName(),
+                owner.getEmail(),
+                owner.getPhone()
+        );
     }
 }

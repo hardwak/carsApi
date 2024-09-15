@@ -1,6 +1,6 @@
 package com.example.software_partner.cars_api.cars;
 
-import com.example.software_partner.cars_api.cars.dto.CarDTO;
+import com.example.software_partner.cars_api.cars.dto.CarCreationDTO;
 import com.example.software_partner.cars_api.cars.dto.CarResponseDTO;
 import com.example.software_partner.cars_api.cars.dto.CarWithOwnerDTO;
 import com.example.software_partner.cars_api.manufactures.ManufacturerService;
@@ -26,7 +26,7 @@ public class CarService {
         this.manufacturerService = manufacturerService;
     }
 
-    public CarResponseDTO addCar(CarDTO carDTO) {
+    public CarResponseDTO addCar(CarCreationDTO carDTO) {
         ManufacturerDTO manufacturer = manufacturerService.getManufacturerById(carDTO.manufacturerId());
         carsRepository.save(carMapper.toCar(carDTO, manufacturer));
         return carMapper.toCarResponseDTO(carMapper.toCar(carDTO, manufacturer));

@@ -1,6 +1,6 @@
 package com.example.software_partner.cars_api.cars;
 
-import com.example.software_partner.cars_api.cars.dto.CarDTO;
+import com.example.software_partner.cars_api.cars.dto.CarCreationDTO;
 import com.example.software_partner.cars_api.cars.dto.CarResponseDTO;
 import com.example.software_partner.cars_api.cars.dto.CarWithOwnerDTO;
 import jakarta.validation.Valid;
@@ -24,7 +24,7 @@ public class CarController {
     }
 
     @PostMapping
-    public CarResponseDTO addNewCar(@Valid @RequestBody CarDTO dto){
+    public CarResponseDTO addNewCar(@Valid @RequestBody CarCreationDTO dto){
         return carService.addCar(dto);
     }
 
