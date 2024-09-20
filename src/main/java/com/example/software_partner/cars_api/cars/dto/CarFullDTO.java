@@ -1,9 +1,9 @@
 package com.example.software_partner.cars_api.cars.dto;
 
 public record CarFullDTO(
-        int id,
+        Integer id,
         String model,
-        int year,
-        int manufacturerId,
+        Integer year,
+        Integer manufacturerId,
         String manufacturer
 ) {}

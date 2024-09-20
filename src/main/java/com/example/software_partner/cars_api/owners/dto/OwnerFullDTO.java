@@ -1,7 +1,7 @@
 package com.example.software_partner.cars_api.owners.dto;
 
 public record OwnerFullDTO(
-        int id,
+        Integer id,
         String firstName,
         String lastName,
         String email,

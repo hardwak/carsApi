@@ -9,7 +9,7 @@ public record CarCreationDTO(
         String model,
         @DecimalMin("1850")
         @DecimalMax("2024")
-        int year,
-        int manufacturerId
+        Integer year,
+        Integer manufacturerId
 ) {
 }

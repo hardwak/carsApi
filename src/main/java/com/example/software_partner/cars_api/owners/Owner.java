@@ -1,23 +1,23 @@
 package com.example.software_partner.cars_api.owners;
 
+import com.example.software_partner.cars_api.BaseEntity;
 import com.example.software_partner.cars_api.cars.Car;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Owner {
+public class Owner extends BaseEntity {
     @Id
     @GeneratedValue
-    private int ownerId;
+    private Integer ownerId;
     private String firstName;
     private String lastName;
     @Column(
